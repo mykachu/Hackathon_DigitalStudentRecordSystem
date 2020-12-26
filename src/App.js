@@ -1,15 +1,14 @@
-// import logo from './logo.svg';
 import './css/App.css';
+import { BrowserRouter as Router } from 'react-router-dom'
 // import LoginPage from './components/LoginPage';
 import StudentPage from './components/StudentPage/StudentPage';
-import GuestPage from './components/GuestPage/GuestPage';
+// import GuestPage from './components/GuestPage/GuestPage';
 
 function App() {
   return (
-    <div className="App">
-      <StudentPage />
-      {/* <GuestPage /> */}
-    </div>
+    <Router>
+      <StudentPage /> 
+    </Router> 
   );
 }
 

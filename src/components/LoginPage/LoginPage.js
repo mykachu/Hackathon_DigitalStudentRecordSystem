@@ -1,81 +1,61 @@
-// import logo from './logo.svg';
-// import './App.css';
-import 'antd/dist/antd.css';
-import { Form, Input, Button, Checkbox } from 'antd';
+import React from 'react';
+import { Form, Input, Button, Checkbox, Layout } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
-const layout = {
-    labelCol: {
-        span: 8,
-    },
-    wrapperCol: {
-        span: 16,
-    },
-};
+class LoginPage extends React.Component {
 
-const tailLayout = {
-    wrapperCol: {
-        offset: 8,
-        span: 16,
-    },
-};
+    onFinish = (values) => {
+        console.log('Received values of form: ', values);
+    };
 
-const onFinish = (values) => {
-    console.log('Success:', values);
-};
+    render() {
 
-const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-};
+        return (
+            <Layout style={{ padding: '0 24px 24px' }}>
 
-function LoginPage() {
-    return (
-
-            <Form
-                {...layout}
-                name="basic"
-                initialValues={{
-                    remember: true,
-                }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-            >
+            <Form 
+                name="normal_login"
+                className="login-form"
+                initialValues={{ remember: true }}
+                onFinish={this.onFinish}
+                >
                 <Form.Item
-                    label="Username"
                     name="username"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your username!',
-                        },
-                    ]}
-                >
-                    <Input />
+                    rules={[{ required: true, message: 'Please input your Username!' }]}
+                    >
+                    <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
                 </Form.Item>
-
                 <Form.Item
-                    label="Password"
                     name="password"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your password!',
-                        },
-                    ]}
-                >
-                    <Input.Password />
+                    rules={[{ required: true, message: 'Please input your Password!' }]}
+                    >
+                    <Input
+                        prefix={<LockOutlined className="site-form-item-icon" />}
+                        type="password"
+                        placeholder="Password"
+                        />
+                </Form.Item>
+                <Form.Item>
+                    <Form.Item name="remember" valuePropName="checked" noStyle>
+                        <Checkbox>Remember me</Checkbox>
+                    </Form.Item>
+
+                    <Link className="login-form-forgot" href="">
+                        Forgot password
+        </Link>
                 </Form.Item>
 
-                <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-                    <Checkbox>Remember me</Checkbox>
-                </Form.Item>
-
-                <Form.Item {...tailLayout}>
-                    <Button type="primary" htmlType="submit">
-                        Submit
-      </Button>
+                <Form.Item>
+                    <Button type="primary" htmlType="submit" className="login-form-button">
+                        Log in
+        </Button>
                 </Form.Item>
             </Form>
-    );
+                        </Layout>
+        );
+    }
+
 }
 
 export default LoginPage;

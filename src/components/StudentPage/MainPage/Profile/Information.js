@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Layout, Switch, Breadcrumb } from 'antd';
+import { Layout, Switch } from 'antd';
 const { Content } = Layout;
 
 class Information extends React.Component {
@@ -9,9 +9,6 @@ class Information extends React.Component {
         const state_prop = this.props.state_prop
         return (
             <Layout style={{ padding: '0 24px 24px' }}>
-                <Breadcrumb style={{ margin: '16px 0' }}>
-                    <Breadcrumb.Item>{state_prop}</Breadcrumb.Item>
-                </Breadcrumb>
                 <Content
                     className="site-layout-background"
                     style={{
