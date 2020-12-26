@@ -1,12 +1,5 @@
 .App {
-  width: 30%;
   text-align: center;
-  margin: 20px auto;
-  position: absolute;
-  left: 60vw;
-  top: 40vh;
-  padding: 2rem;
-  z-index: 1;
 }
 
 .App-logo {
