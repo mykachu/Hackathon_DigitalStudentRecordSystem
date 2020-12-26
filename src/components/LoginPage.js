@@ -29,7 +29,6 @@ const onFinishFailed = (errorInfo) => {
 
 function LoginPage() {
     return (
-        <div>
 
             <Form
                 {...layout}
@@ -76,7 +75,6 @@ function LoginPage() {
       </Button>
                 </Form.Item>
             </Form>
-        </div>
     );
 }
 
