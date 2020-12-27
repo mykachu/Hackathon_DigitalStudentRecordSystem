@@ -1,7 +1,7 @@
 import 'antd/dist/antd.css';
 import React from 'react';
 
-import { Layout } from 'antd';
+import { Layout, Empty } from 'antd';
 const { Content } = Layout;
 class Overview extends React.Component {
     render(){
@@ -16,6 +16,7 @@ class Overview extends React.Component {
                 }}
             >
                 <p> This is ScoreTable at level: {this.props.level}</p>
+                <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
         </Content>
         </Layout>
         )

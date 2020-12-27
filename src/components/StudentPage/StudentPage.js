@@ -32,6 +32,7 @@ class StudentPage extends React.Component {
             <Layout>
                 <Header className="header">
                     <div className="logo" />
+    
                     <Menu
                         onClick={this.handleClick}
                         theme="dark"

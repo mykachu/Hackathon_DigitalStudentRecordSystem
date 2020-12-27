@@ -20,6 +20,9 @@ Database Designer: HuyVipPro
     # Install requirements
     yarn install
 
+    # Or
+    yarn
+
 # To run projects
 .. code:: sh
 
